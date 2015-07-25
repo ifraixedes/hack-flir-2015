@@ -1,4 +1,4 @@
-package hack.nightowlsafari;
+package hack.mrowlsafari;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 
-import hack.nightowlsafari.routes.RoutesContent;
+import hack.mrowlsafari.routes.RoutesContent;
 
 /**
  * A fragment representing a list of Items.

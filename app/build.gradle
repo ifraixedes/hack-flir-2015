@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "hack.nightowlsafari"
+        applicationId "hack.mrowlsafari"
         minSdkVersion 21
         targetSdkVersion 22
         versionCode 1

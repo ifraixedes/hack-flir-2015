@@ -1,4 +1,4 @@
-package hack.nightowlsafari.animals;
+package hack.mrowlsafari.animals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
