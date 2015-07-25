@@ -1,4 +1,4 @@
-package hack.nightowlsafari;
+package hack.mrowlsafari;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

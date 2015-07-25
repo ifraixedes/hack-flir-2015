@@ -1,26 +1,21 @@
-package hack.nightowlsafari;
+package hack.mrowlsafari;
 
 import android.app.Activity;
 
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 
 public class MainActivity extends Activity
-	implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+	implements NavigationDrawerFragment.NavigationDrawerCallbacks, AnimalsFragment.OnFragmentInteractionListener, RoutesFragment.OnFragmentInteractionListener {
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -49,23 +44,40 @@ public class MainActivity extends Activity
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
-		// update the main content by replacing fragments
-		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction()
-			.replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-			.commit();
+		FragmentManager fragmentManager;
+		switch (position) {
+			case 0:
+				fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, AnimalsFragment.newInstance())
+					.commit();
+				break;
+			case 1:
+				fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, RoutesFragment.newInstance())
+					.commit();
+				break;
+			default:
+				// update the main content by replacing fragments
+				 fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+					.commit();
+		}
+
 	}
 
 	public void onSectionAttached(int number) {
 		switch (number) {
 			case 1:
-				mTitle = getString(R.string.title_section1);
+				mTitle = getString(R.string.title_found_animals);
 				break;
 			case 2:
-				mTitle = getString(R.string.title_section2);
+				mTitle = getString(R.string.title_take_pic);
 				break;
 			case 3:
-				mTitle = getString(R.string.title_section3);
+				mTitle = getString(R.string.title_routes);
 				break;
 		}
 	}
@@ -106,6 +118,10 @@ public class MainActivity extends Activity
 		return super.onOptionsItemSelected(item);
 	}
 
+	public void onFragmentInteraction(String id) {
+
+	}
+
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
@@ -121,6 +137,7 @@ public class MainActivity extends Activity
 		 * number.
 		 */
 		public static PlaceholderFragment newInstance(int sectionNumber) {
+
 			PlaceholderFragment fragment = new PlaceholderFragment();
 			Bundle args = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
