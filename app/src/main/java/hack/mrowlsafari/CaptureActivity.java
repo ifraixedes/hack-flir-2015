@@ -29,7 +29,11 @@ public class CaptureActivity extends Activity implements Device.Delegate, Device
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Device.startDiscovery(this, this);
+		try {
+			Device.startDiscovery(this, this);
+		}catch(IllegalStateException e) {
+			// it's okay if we've already started discovery
+		}
 	}
 
 	@Override
