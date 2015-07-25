@@ -14,4 +14,5 @@
     <string name="title_activity_animals">AnimalsActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_capture">CaptureActivity</string>
 </resources>
