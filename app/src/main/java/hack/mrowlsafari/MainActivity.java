@@ -60,7 +60,7 @@ public class MainActivity extends Activity
 					.commit();
 				break;
 			case 2:
-				startActivity(new Intent(this, CaptureActivity.class));
+				startActivity(new Intent(this, CaptureMockActivity.class));
 				break;
 			default:
 				fragmentManager = getFragmentManager();
@@ -77,11 +77,12 @@ public class MainActivity extends Activity
 				mTitle = getString(R.string.title_found_animals);
 				break;
 			case 2:
-				mTitle = getString(R.string.title_take_pic);
-				break;
-			case 3:
 				mTitle = getString(R.string.title_routes);
 				break;
+			case 3:
+				mTitle = getString(R.string.title_take_pic);
+				break;
+
 		}
 	}
 
