@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Night Owl Safari</string>
+    <string name="app_name">Mr. Owl Safari</string>
 
     <string name="title_routes">Walk a Route</string>
     <string name="title_take_pic">Take a Picture</string>
@@ -14,4 +14,14 @@
     <string name="title_activity_animals">AnimalsActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_capture">CaptureActivity</string>
+
+    <string name="title_activity_catpure_mock">CatpureMockActivity</string>
+    <string name="take_pic">Take Picture</string>
+    <string name="title_activity_choose_animal">ChooseAnimalActivity</string>
+    <string name="choose_animal_question">What animal is?</string>
+
+    <string name="title_activity_start">Mr. Owl Safari</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

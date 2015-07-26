@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ import hack.mrowlsafari.routes.RoutesContent;
  * Activities containing this fragment MUST implement the {@link OnFragmentInteractionListener}
  * interface.
  */
-public class RoutesFragment extends Fragment implements AbsListView.OnItemClickListener {
+public class RoutesFragment extends Fragment {
 	private OnFragmentInteractionListener mListener;
 
 	/**
@@ -38,7 +39,7 @@ public class RoutesFragment extends Fragment implements AbsListView.OnItemClickL
 	 */
 	private ListAdapter mAdapter;
 
-	// TODO: Rename and change types of parameters
+
 	public static RoutesFragment newInstance() {
 		RoutesFragment fragment = new RoutesFragment();
 		Bundle args = new Bundle();
@@ -56,9 +57,8 @@ public class RoutesFragment extends Fragment implements AbsListView.OnItemClickL
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	// TODO: Change Adapter to display your content
-		mAdapter = new ArrayAdapter<RoutesContent.RouteItem>(getActivity(),
-			android.R.layout.simple_list_item_1, android.R.id.text1, RoutesContent.ITEMS);
+
+
 	}
 
 	@Override
@@ -66,41 +66,14 @@ public class RoutesFragment extends Fragment implements AbsListView.OnItemClickL
 													 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_route, container, false);
 
-		// Set the adapter
-		mListView = (AbsListView) view.findViewById(android.R.id.list);
-		((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
-
-		// Set OnItemClickListener so we can be notified on item clicks
-		mListView.setOnItemClickListener(this);
+		((ImageView) view.findViewById(R.id.routeView1)).setImageResource(R.mipmap.route1);
+		((ImageView) view.findViewById(R.id.routeView2)).setImageResource(R.mipmap.route2);
+		((ImageView) view.findViewById(R.id.routeView3)).setImageResource(R.mipmap.route3);
 
 		return view;
 	}
 
-	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		try {
-			mListener = (OnFragmentInteractionListener) activity;
-		} catch (ClassCastException e) {
-			throw new ClassCastException(activity.toString()
-				+ " must implement OnFragmentInteractionListener");
-		}
-	}
 
-	@Override
-	public void onDetach() {
-		super.onDetach();
-		mListener = null;
-	}
-
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		if (null != mListener) {
-			// Notify the active callbacks interface (the activity, if the
-			// fragment is attached to one) that an item has been selected.
-			mListener.onFragmentInteraction(RoutesContent.ITEMS.get(position).id);
-		}
-	}
 
 	/**
 	 * The default content for this Fragment has a TextView that is shown when
@@ -126,7 +99,7 @@ public class RoutesFragment extends Fragment implements AbsListView.OnItemClickL
 	 * >Communicating with Other Fragments</a> for more information.
 	 */
 	public interface OnFragmentInteractionListener {
-		// TODO: Update argument type and name
+
 		public void onFragmentInteraction(String id);
 	}
 

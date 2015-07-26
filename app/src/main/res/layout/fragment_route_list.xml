@@ -5,15 +5,57 @@
              android:layout_height="match_parent"
              tools:context="hack.mrowlsafari.RoutesFragment">
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="St. James Park (London)"
+                />
 
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:id="@+id/routeView1"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="Barcelona Zoo (Spain)"
+                />
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:id="@+id/routeView2"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="Sequoia Park (CA)"
+                />
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="240dp"
+                android:id="@+id/routeView3"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </FrameLayout>

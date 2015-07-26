@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -58,9 +59,11 @@ public class MainActivity extends Activity
 					.replace(R.id.container, RoutesFragment.newInstance())
 					.commit();
 				break;
+			case 2:
+				startActivity(new Intent(this, CaptureMockActivity.class));
+				break;
 			default:
-				// update the main content by replacing fragments
-				 fragmentManager = getFragmentManager();
+				fragmentManager = getFragmentManager();
 				fragmentManager.beginTransaction()
 					.replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
 					.commit();
@@ -74,11 +77,12 @@ public class MainActivity extends Activity
 				mTitle = getString(R.string.title_found_animals);
 				break;
 			case 2:
-				mTitle = getString(R.string.title_take_pic);
-				break;
-			case 3:
 				mTitle = getString(R.string.title_routes);
 				break;
+			case 3:
+				mTitle = getString(R.string.title_take_pic);
+				break;
+
 		}
 	}
 
